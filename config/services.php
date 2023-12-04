@@ -31,4 +31,8 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    'scheduling' => [
+		'task_bank' => config_path('scheduling.php'),
+		//~ 'configurator' => AnyConfigurator::class,
+    ],
 ];
