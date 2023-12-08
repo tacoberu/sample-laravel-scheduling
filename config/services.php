@@ -33,6 +33,7 @@ return [
 
     'scheduling' => [
 		'task_bank' => config_path('scheduling.php'),
-		'configurator' => Taco\Scheduling\LaravelConfigurator::class,
+		//~ 'configurator' => Taco\Scheduling\LaravelConfigurator::class,
+		'configurator' => Taco\Scheduling\CrunzConfigurator::class,
     ],
 ];
