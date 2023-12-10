@@ -6,6 +6,7 @@ use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 use Taco\Scheduling\BankService;
 use Taco\Scheduling\TasksDeposit;
+use Taco\Scheduling\ScheduleMutex;
 use LogicException;
 
 
@@ -35,7 +36,9 @@ class Kernel extends ConsoleKernel
 				$entity->description($cmddef->getDescription());
 			}
 			$entity->appendOutputTo(storage_path('logs/xschedule.log'))
-				->cron($cmddef->getCronExpression());
+				->cron($cmddef->getCronExpression())
+				->withoutOverlapping()
+				;
 		}
 	}
 
